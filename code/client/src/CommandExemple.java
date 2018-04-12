@@ -3,7 +3,7 @@ import java.util.List;
 
 public class CommandExemple {
 
-    public CommandExemple(List<String> texts, int number){
+    public CommandExemple(List<String> texts, String number){
         this.texts = texts;
         this.number = number;
     }
@@ -12,13 +12,13 @@ public class CommandExemple {
 
     private List<String> texts;
 
-    private int number;
+    private String number;
 
-    public List<String> gettexts(){
+    public List<String> getTexts(){
         return texts;
     }
 
-    public int getnumber(){
+    public String getNumber(){
         return number;
     }
 
@@ -26,12 +26,13 @@ public class CommandExemple {
         this.texts = new ArrayList<>(texts);
     }
 
-    public void setNumber(int number){
+    public void setNumber(String number){
         this.number = number;
     }
 
     public boolean equals(CommandExemple commande) {
-        for (int i = 0; i < number; number++) {
+        int numberCommand = Integer.getInteger(number);
+        for (int i = 0; i < numberCommand; numberCommand++) {
             if(!commande.texts.get(i).equals(texts.get(i)))
                 return false;
         }
